@@ -5,12 +5,7 @@ def encoded(password):
     acc_encoded_pass = []
     for char in password:
         encoded_number = int(char) + 3
-        if encoded_number < 10:
-            encoded1_number = encoded_number
-        if encoded_number > 9:
-            encoded1_number = encoded_number - 10
-            print(encoded1_number)
-        encoded1_password.append(str(encoded1_number))
+        encoded1_password.append(str(encoded_number))
     acc_encoded_pass = ''.join((encoded1_password))
     return acc_encoded_pass
 
