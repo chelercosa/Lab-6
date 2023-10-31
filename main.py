@@ -3,17 +3,17 @@
 def encoded(password):
     encoded1_password = []
     acc_encoded_pass = []
-    for i in range(len(password)):
-        encoded_number = int(password[i]) + 3
-        encoded1_password.append(str(encoded_number))
-        acc_encoded_pass = ''.join((encoded1_password))
+    for char in password:
+        encoded_number = int(char) + 3
+        if encoded_number < 10:
+            encoded1_number = encoded_number
+        if encoded_number > 9:
+            encoded1_number = encoded_number - 10
+            print(encoded1_number)
+        encoded1_password.append(str(encoded1_number))
+    acc_encoded_pass = ''.join((encoded1_password))
     return acc_encoded_pass
 
-# def decoded(password):
-#     decoded_password = []
-#     for i in range(len(password)):
-#         decoded_password.append(str(int(password[i] - 3)))
-#     return decoded_password
 
 
 def decoder(password):
@@ -36,6 +36,7 @@ def main():
             password = int(input("Please enter your password to encode: "))
             # print(encoded_password)
             encoded_password = encoded(str(password))
+            print(encoded(str(password)))
             print("Your password has been encoded and stored!")
         if user_input == 2:
             # everything is working here!
